@@ -1,2 +1,2 @@
-module MovieListsHelper
+module ListsHelper
 end
