@@ -24,12 +24,13 @@ Confirm:
 - [ ] Views use partials if appropriate
 
 ---
-user (username, password)
 
-movie (name, year, category, image)
-
-event (title, date, time location)
-
-MoviesWatchList (join table for user-movie, category of watched or want to watch - boolean)
-
-session
+Next Steps:
+- Update Layouts, application (add navigation bar, rotating list of movie pics)
+- Create Views for Movie#Index
+- Create Sign-up Page, Log In Page
+- Add New Movie/Update Movie/Delete Movie, has filter/search options
+- Create New Event/Update Event/Delete Event, has filter/sort options
+- User Add Movie to List from Movie#Index
+- User#index to view other user's pages
+- User has a #home page with stats

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "movies#index"
+  root to: "movies#home"
   resources :lists
   get 'session/signup'
   get 'session/login'
