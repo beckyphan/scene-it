@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :movie_lists
+  root to: "movies#index"
+  resources :lists
   get 'session/signup'
   get 'session/login'
-  get 'session/logout'
+  delete 'session/logout'
   resources :comments
   resources :ratings
   resources :events
