@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2019_11_10_234338) do
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "event_id"
+    t.text "content"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_comments_on_event_id"
@@ -46,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_11_10_234338) do
   create_table "ratings", force: :cascade do |t|
     t.integer "user_id"
     t.integer "movie_id"
+    t.boolean "recommend"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_ratings_on_movie_id"

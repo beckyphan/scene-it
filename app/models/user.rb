@@ -7,4 +7,6 @@ class User < ApplicationRecord
   has_many :movies, through: :ratings
   has_many :events, as: :host
   has_many :events, as: :attendee
+
+  #<User id: nil, username: nil, password_digest: nil, created_at: nil, updated_at: nil> 
 end
