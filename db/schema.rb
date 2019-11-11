@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_10_234338) do
+ActiveRecord::Schema.define(version: 2019_11_11_004837) do
 
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(version: 2019_11_10_234338) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["host_id"], name: "index_events_on_host_id"
     t.index ["movie_id"], name: "index_events_on_movie_id"
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "movie_id"
+    t.boolean "watched"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["movie_id"], name: "index_lists_on_movie_id"
+    t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
   create_table "movies", force: :cascade do |t|

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :movie_lists
   get 'session/signup'
   get 'session/login'
   get 'session/logout'
