@@ -1,6 +1,6 @@
-class MovieList < ApplicationRecord
+class List < ApplicationRecord
   belongs_to :user
-  belongs_to :movie
+  has_many :movies
   scope :seen, { where (watched: true)}
   scope :to_see, {where (watched: false)}
 end
