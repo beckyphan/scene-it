@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'session/signup'
+  get 'session/login'
+  get 'session/logout'
   resources :comments
   resources :ratings
   resources :events
