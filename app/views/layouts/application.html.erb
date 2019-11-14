@@ -4,10 +4,22 @@
     <title>SceneIt</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Lora:400,400i,700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
+  <nav>
+    <div>
+    </div>
+    <div>
+    <% if logged_in? %>
+      <span class="link"><%= link_to "My Dashboard", user_path(current_user) %></span>
+      <span class="link"><%= link_to "Movies", movies_path %></span>
+      <span class="link"><%= link_to "Events", movies_path %></span>
+    <% end %>
+    </div>
+  </nav>
 
   <body>
     <%= flash[:message] %>

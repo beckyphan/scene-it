@@ -1,2 +1,14 @@
-<h1>Session#signup</h1>
-<p>Find me in app/views/session/signup.html.erb</p>
+<nav>
+  <div>
+  </div>
+  <div>
+    <span class="link"><%= link_to "Log In", session_login_path %></span>
+  </div>
+</nav>
+
+<div class="form">
+  <h1>Sign Up</h1>
+  <%= form_tag users_path, method: "post" do %>
+    <%= render "layouts/user" %>
+  <% end %>
+<div>
