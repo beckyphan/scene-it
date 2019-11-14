@@ -1,2 +1,15 @@
-<h1>Session#login</h1>
-<p>Find me in app/views/session/login.html.erb</p>
+<nav>
+  <div>
+  </div>
+  <div>
+    <span class="link"><%= link_to "Sign Up", signup_path %></span>
+  </div>
+</nav>
+
+<div class="form">
+  <h1>Log In</h1>
+  <%= form_tag('/login', method: "post") do %>
+    <%= render partial:"layouts/user"%>
+    <%= submit_tag "Log In" %>
+  <% end %>
+<div>

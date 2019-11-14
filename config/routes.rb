@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :lists
   get 'signup', to: "session#signup"
   get 'login', to: "session#login"
+  post 'login', to: "sessions#authenticate"
   delete 'session/logout'
   resources :comments
   resources :ratings
@@ -24,6 +25,7 @@ end
 #                                DELETE /lists/:id(.:format)                                                                     lists#destroy
 #                         signup GET    /signup(.:format)                                                                        session#signup
 #                          login GET    /login(.:format)                                                                         session#login
+#                                POST   /login(.:format)                                                                         sessions#authenticate
 #                 session_logout DELETE /session/logout(.:format)                                                                session#logout
 #                       comments GET    /comments(.:format)                                                                      comments#index
 #                                POST   /comments(.:format)                                                                      comments#create

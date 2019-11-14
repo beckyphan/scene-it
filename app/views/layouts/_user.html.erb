@@ -1,9 +1,7 @@
-<%= form_for user, method: "post" do |f| %>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
+
+  <%= label_tag :username %>
+  <%= text_field_tag :username %>
   </br>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
   <br>
-  <%= f.submit "Sign Up" %>
-<% end %>

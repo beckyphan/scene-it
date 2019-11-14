@@ -4,6 +4,11 @@ class SessionController < ApplicationController
   end
 
   def login
+    @user = User.new
+  end
+
+  def authenticate
+    raise params.inspect
     @user = User.find_by_id(params[:username])
 
     if @user.try(:authenticate, params[:user][:password])

@@ -8,5 +8,8 @@
 
 <div class="form">
   <h1>Sign Up</h1>
-    <%= render partial:"layouts/user", locals: {user: @user} %>
+  <%= form_tag @user, method: "post" do %>
+    <%= render partial:"layouts/user"%>
+    <%= submit_tag "Sign Up" %>
+  <% end %>
 <div>
