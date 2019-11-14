@@ -10,15 +10,16 @@
   </head>
 
   <nav>
-    <div>
-    </div>
-    <div>
     <% if logged_in? %>
-      <span class="link"><%= link_to "My Dashboard", user_path(current_user) %></span>
-      <span class="link"><%= link_to "Movies", movies_path %></span>
-      <span class="link"><%= link_to "Events", movies_path %></span>
+      <div class="user_home">
+        <span class="link"><%= link_to "Dashboard", user_path(current_user) %></span>
+      </div>
+      <div>
+        <span class="link"><%= link_to "Movies", movies_path %></span>
+        <span class="link"><%= link_to "Events", movies_path %></span>
+        <span class="link"><%= link_to "Log Out", session_logout_path, method: "delete" %></span>
+      </div>
     <% end %>
-    </div>
   </nav>
 
   <body>

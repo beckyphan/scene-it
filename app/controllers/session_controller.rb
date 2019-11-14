@@ -8,14 +8,13 @@ class SessionController < ApplicationController
   end
 
   def authenticate
-    raise params.inspect
-    @user = User.find_by_id(params[:username])
+    @user = User.find_by(username: params[:username])
 
-    if @user.try(:authenticate, params[:user][:password])
+    if @user.try(:authenticate, params[:password])
       session[:user_id] = @user.id
-      redirect_to user_path(@current_user)
+      redirect_to user_path(current_user.id)
     else
-      flash[:error] = "Incorrect login credentials. Please try again."
+      flash[:message] = "Incorrect login credentials. Please try again."
       redirect_to login_path
     end
   end
