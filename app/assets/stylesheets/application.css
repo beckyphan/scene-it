@@ -18,6 +18,9 @@ body {
   background-color: black;
   font-family: 'Bebas Neue', cursive;
   color: white;
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
 }
 
 nav {
@@ -41,6 +44,10 @@ nav div span {
   width: 20%;
   padding: 10px 20px 10px 20px;
   justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
 }
 
 .center {
@@ -71,7 +78,6 @@ div .message {
 a:link, a:visited {
   opacity: 0.5;
   text-decoration: none;
-  text-align: center;
   color: white;
 }
 

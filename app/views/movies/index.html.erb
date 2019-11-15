@@ -1,0 +1,18 @@
+<h1>|| Movies ||</h1>
+<br>
+
+<div class="all-movies">
+  <div class="main-movie-container">
+    <% @movies.each do |m| %>
+      <a href="/movies/<%= m.id %>">
+        <span class="movie-container">
+          <img src="<%= m.image_url %>" class="movie_img">
+          <h3><%= m.name %> | <%= m.year %> | <%= m.category %></h3>
+        </span>
+      </a>
+        <span class="movie-rating">
+
+        </span>
+    <% end %>
+  </div>
+</div>
