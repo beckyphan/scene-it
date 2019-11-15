@@ -19,11 +19,13 @@ class MoviesController < ApplicationController
   def show
     @movie = Movie.find_by_id(params[:id])
 
-    if @movie.ratings.count > 0
+    if @movie.ratings.size > 0
       @rating = @movie.average(:rating)
     else
       @rating = 0
-    end 
+    end
+
+    # @list = current_user.build_list(movie_id: @movie.id, watched: 0)
   end
 
   private

@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_11_11_004837) do
   create_table "lists", force: :cascade do |t|
     t.integer "user_id"
     t.integer "movie_id"
-    t.boolean "watched"
+    t.boolean "watched", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_lists_on_movie_id"

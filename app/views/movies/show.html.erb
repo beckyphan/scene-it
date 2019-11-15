@@ -8,12 +8,32 @@
 
 <div class="movie-show-background">
 
-
   <div class="movie-show-info">
     <h1> <%= thumbs_rating(@rating) %>  <%= @movie.name %>  <%= thumbs_rating(@rating) %></h1>
     <div>
-      <h3><%= @movie.year %> | <%= @movie.category %></h3>
+      <h3><%= @movie.year %> | <%= @movie.category %> | <%= link_to "Edit", edit_movie_path, class: "edit" %></h3>
       <br>
     <div>
+
+    <div>
+      <% if @movie.events.size > 0 %>
+        <h2> Upcoming Viewing Events </h2>
+          <% @movie.events.each do |e| %>
+            <a href="/events/<%= e.id %>">
+              <span>
+                <%= e.title %><br>
+                <%= e.date %> | <%= e.time %><br>
+                <%= e.location %>
+              </span>
+            </a>
+          <% end %>
+      <% end %>
+    </div>
+
+    <div>
+      <button type="button" name="button">Add to 'Want to Watch'</button>
+      <button type="button" name="button">Seen It: Recommend</button>
+      <button type="button" name="button">Seen It: Don't Recommend</button>
+    </div>
   </div>
 </div>
