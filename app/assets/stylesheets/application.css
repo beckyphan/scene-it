@@ -46,7 +46,7 @@ nav div span {
   justify-content: space-between;
 }
 
-h1 {
+h1, h2 {
   text-align: center;
 }
 
@@ -73,6 +73,23 @@ h1 {
 
 div .message {
   padding: 20px;
+}
+
+.new-form {
+  width: 25%;
+  margin: 0 auto;
+  padding: 25px;
+  background-image: url('https://images.unsplash.com/photo-1542204165-65bf26472b9b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1867&q=80');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.new-form span {
+  text-align: left;
+}
+
+.new-form input {
+  width: 150px;
 }
 
 a:link, a:visited {

@@ -16,3 +16,24 @@
     <% end %>
   </div>
 </div>
+
+<h2>Add New Movie</h2>
+<div class="new-form">
+  <span>
+    <%= form_for @movie do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :year %>
+      <%= f.text_field :year %>
+      <br>
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+      <br>
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+      <br><br>
+      <%= f.submit "Submit" %>
+    <% end %>
+  </span>
+</div>

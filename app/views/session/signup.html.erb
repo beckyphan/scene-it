@@ -2,7 +2,9 @@
   <div>
   </div>
   <div>
-    <span class="link"><%= link_to "Log In", login_path %></span>
+    <% if !logged_in? %>
+      <span class="link"><%= link_to "Log In", login_path %></span>
+      <% end %>
   </div>
 </nav>
 
