@@ -16,6 +16,16 @@ class MoviesController < ApplicationController
     end
   end
 
+  def show
+    @movie = Movie.find_by_id(params[:id])
+
+    if @movie.ratings.count > 0
+      @rating = @movie.average(:rating)
+    else
+      @rating = 0
+    end 
+  end
+
   private
 
   def movie_params

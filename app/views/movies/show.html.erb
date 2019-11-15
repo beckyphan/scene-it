@@ -1,0 +1,19 @@
+<style>
+  body {
+    background-image: url('<%= @movie.image_url %>');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<div class="movie-show-background">
+
+
+  <div class="movie-show-info">
+    <h1> <%= thumbs_rating(@rating) %>  <%= @movie.name %>  <%= thumbs_rating(@rating) %></h1>
+    <div>
+      <h3><%= @movie.year %> | <%= @movie.category %></h3>
+      <br>
+    <div>
+  </div>
+</div>

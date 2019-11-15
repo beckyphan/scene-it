@@ -18,3 +18,17 @@
   width: 200px;
   height: 275px;
 }
+
+div.movie-show-info {
+  padding: 5px;
+  background: black;
+  opacity: 0.9;
+}
+
+.movie-show-info div {
+  margin: 0 auto;
+}
+
+.movie-show-info img {
+  width: 2.5rem;
+}
