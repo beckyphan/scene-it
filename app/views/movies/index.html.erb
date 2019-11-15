@@ -21,6 +21,19 @@
   </div>
 <br>
 <h2>Add New Movie</h2>
+
+<% if @movie.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+    <ul>
+    <% @movie.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="new-form">
   <span>
     <%= form_for @movie do |f| %>

@@ -99,6 +99,22 @@ div .message {
   width: 95%;
 }
 
+#error_explanation {
+  color: #d9534f;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.field_with_errors {
+  color: #d9534f;
+}
+
+.field_with_errors input {
+  border-style: solid;
+  border-color: #d9534f;
+  border-width: 2px;
+}
+
 a:link, a:visited {
   opacity: 0.5;
   text-decoration: none;

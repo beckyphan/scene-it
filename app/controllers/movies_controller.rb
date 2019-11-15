@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
     if @movie.save
       redirect_to movies_path
     else
+      @movies = Movie.all
       render "index"
     end
   end
