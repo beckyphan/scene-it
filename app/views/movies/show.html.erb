@@ -46,7 +46,7 @@
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.hidden_field :movie_id, value: params[:id] %>
               <%= f.hidden_field :recommend, value: true %>
-              <%= f.submit, type: "image", src: thumbs_up_button %>
+              <%= f.submit "Thumbs Up", type: "image", src: 'https://image.flaticon.com/icons/svg/25/25297.svg' %>
             <% end %>
         </div>
 
@@ -55,11 +55,11 @@
             <%= f.hidden_field :user_id, value: current_user.id %>
             <%= f.hidden_field :movie_id, value: params[:id] %>
             <%= f.hidden_field :recommend, value: false %>
-            <%= f.submit, type: "image", src: thumbs_down_button %>
+            <%= f.submit "Thumbs Down", type: "image", src: 'https://image.flaticon.com/icons/png/512/25/25395.png' %>
           <% end %>
         </div>
       <% end %>
 
-        </div>
-      </div>
     </div>
+  </div>
+</div>
