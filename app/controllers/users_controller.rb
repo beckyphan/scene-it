@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_login
 
   def create
     @user = User.new(username: params[:username], password: params[:password])
