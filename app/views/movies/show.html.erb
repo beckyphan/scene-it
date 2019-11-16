@@ -9,11 +9,11 @@
 <div class="movie-show-background">
 
   <div class="movie-show-info">
-    <h1> <%= thumbs_rating(@rating) %>  <%= @movie.name %>  <%= thumbs_rating(@rating) %></h1>
+    <h1> <%= thumbs_rating(@avg_rating) %>  <%= @movie.name %>  <%= thumbs_rating(@avg_rating) %></h1>
     <div>
       <h3><%= @movie.year %> | <%= @movie.category %> | <%= link_to "Edit", edit_movie_path, class: "edit" %></h3>
       <br>
-    <div>
+    </div>
 
     <div>
       <% if @movie.events.size > 0 %>
@@ -31,10 +31,35 @@
     </div>
 
     <div>
+      <div class="seen-button">
+      <%= form_for @list do |f| %>
+        <%= f.hidden_field :user_id, value: current_user.id %>
+        <%= f.hidden_field :movie_id, value: params[:id] %>
+        <%= f.hidden_field :watched, value: true %>
+        <%= f.submit "Seen It" %>
+      <% end %>
+      </div>
 
-      <button type="button" name="button">Add to 'Want to Watch'</button>
-      <button type="button" name="button">Seen It: Recommend</button>
-      <button type="button" name="button">Seen It: Don't Recommend</button>
+      <% if @seen %>
+        <div class="thumbs-up" class="<%= @user_rated %>">
+            <%= form_for @rating do |f| %>
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :movie_id, value: params[:id] %>
+              <%= f.hidden_field :recommend, value: true %>
+              <%= f.submit, type: "image", src: thumbs_up_button %>
+            <% end %>
+        </div>
+
+        <div class="thumbs-down" class="<%= @user_rated %>">
+          <%= form_for @rating do |f| %>
+            <%= f.hidden_field :user_id, value: current_user.id %>
+            <%= f.hidden_field :movie_id, value: params[:id] %>
+            <%= f.hidden_field :recommend, value: false %>
+            <%= f.submit, type: "image", src: thumbs_down_button %>
+          <% end %>
+        </div>
+      <% end %>
+
+        </div>
+      </div>
     </div>
-  </div>
-</div>

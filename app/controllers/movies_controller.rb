@@ -21,12 +21,28 @@ class MoviesController < ApplicationController
     @movie = Movie.find_by_id(params[:id])
 
     if @movie.ratings.size > 0
-      @rating = @movie.average(:rating)
+      @avg_rating = @movie.average(:rating)
     else
-      @rating = 0
+      @avg_rating = 0
     end
 
-    # @list = current_user.build_list(movie_id: @movie.id, watched: 0)
+    @list = List.new
+
+    @seen = false
+
+    if current_user.lists.include?(movie_id: @movie.id)
+      @seen = true
+      binding.pry
+      @rating = Rating.where("user_id = ? AND movie_id = ?", current_user.id, params[:id])
+      if @user_rating.recommend
+        @user_rated = "user_recommended"
+      else
+        @user_rated = "do_not_watch"
+      end
+    else
+      @rating = Rating.new
+    end
+
   end
 
   private
