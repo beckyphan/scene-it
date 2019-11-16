@@ -44,3 +44,23 @@ button {
 .movie-show-info a.edit {
   color: black;
 }
+
+div.form-dividers {
+  display: flex;
+}
+
+.form-dividers .thumbs {
+  display: flex;
+}
+
+.icon {
+  width: 25px;
+}
+
+.dim {
+  opacity: 0.5;
+}
+
+.highlight {
+  opacity: 1;
+}

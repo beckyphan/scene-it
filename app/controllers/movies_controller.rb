@@ -33,18 +33,19 @@ class MoviesController < ApplicationController
       @list = List.new
     end
 
-    @seen = false
-
-    if current_user.lists.include?(movie_id: @movie.id)
+    if current_user.lists.include?(@list)
       @seen = true
 
-      @rating = Rating.where("user_id = ? AND movie_id = ?", current_user.id, params[:id]).
-      if @user_rating.recommend
-        @user_rated = "user_recommended"
+      @rating = Rating.where("user_id = ? AND movie_id = ?", current_user.id, params[:id]).first
+
+      if @rating.recommend
+        @user_rated = "highlight"
       else
-        @user_rated = "do_not_watch"
+        @user_rated = "dim"
       end
+
     else
+      @seen = false
       @rating = Rating.new
     end
 
