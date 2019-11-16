@@ -46,7 +46,7 @@
       <div>
       <h3> Do you Recommend? </h3>
         <div class="thumbs">
-        <div class="thumbs-up" class="<%= @user_rated %>">
+        <div class="<%= @thumbs_up %>">
             <%= form_for @rating do |f| %>
               <%= f.hidden_field :user_id, value: current_user.id %>
               <%= f.hidden_field :movie_id, value: params[:id] %>
@@ -55,7 +55,7 @@
             <% end %>
         </div>
 
-        <div class="thumbs-down" class="<%= @user_rated %>">
+        <div class="<%= @thumbs_down %>">
           <%= form_for @rating do |f| %>
             <%= f.hidden_field :user_id, value: current_user.id %>
             <%= f.hidden_field :movie_id, value: params[:id] %>
