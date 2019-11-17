@@ -37,43 +37,45 @@
           </div>
         <br>
         <div class="form-dividers">
-          <% if !@seen %>
-          <div class="seen-button">
-            <h3> Have you Seen This Movie? </h3>
-            <%= form_for @list do |f| %>
-              <%= f.hidden_field :user_id, value: current_user.id %>
-              <%= f.hidden_field :movie_id, value: params[:id] %>
-              <%= f.hidden_field :watched, value: true %>
-              <%= f.submit "Seen It" %>
-            <% end %>
-          </div>
-          <% end %>
           <% if @seen %>
-          <div>
-          <h3> Do you Recommend? </h3>
-            <div class="thumbs">
-            <div class="<%= @thumbs_up %>">
-                <%= form_for @rating do |f| %>
-                  <%= f.hidden_field :user_id, value: current_user.id %>
-                  <%= f.hidden_field :movie_id, value: params[:id] %>
-                  <%= f.hidden_field :recommend, value: true %>
-                  <%= f.submit "Thumbs Up", type: "image", src: 'https://image.flaticon.com/icons/svg/25/25297.svg', class: "icon" %>
-                <% end %>
-            </div>
+            <div>
+            <h3> Do you Recommend? </h3>
+              <div class="thumbs">
+                <div class="<%= @thumbs_up %>">
+                    <%= form_for @rating do |f| %>
+                      <%= f.hidden_field :user_id, value: current_user.id %>
+                      <%= f.hidden_field :movie_id, value: params[:id] %>
+                      <%= f.hidden_field :recommend, value: true %>
+                      <%= f.submit "Thumbs Up", type: "image", src: 'https://image.flaticon.com/icons/svg/25/25297.svg', class: "icon" %>
+                    <% end %>
+                </div>
 
-            <div class="<%= @thumbs_down %>">
-              <%= form_for @rating do |f| %>
+                <div class="<%= @thumbs_down %>">
+                  <%= form_for @rating do |f| %>
+                    <%= f.hidden_field :user_id, value: current_user.id %>
+                    <%= f.hidden_field :movie_id, value: params[:id] %>
+                    <%= f.hidden_field :recommend, value: false %>
+                    <%= f.submit "Thumbs Down", type: "image", src: 'https://image.flaticon.com/icons/png/512/25/25395.png', class: "icon" %>
+                  <% end %>
+                </div>
+              </div>
+
+          <% else %>
+            <div class="seen-button">
+              <h3> Have you Seen This Movie? </h3>
+              <%= form_for @list do |f| %>
                 <%= f.hidden_field :user_id, value: current_user.id %>
                 <%= f.hidden_field :movie_id, value: params[:id] %>
-                <%= f.hidden_field :recommend, value: false %>
-                <%= f.submit "Thumbs Down", type: "image", src: 'https://image.flaticon.com/icons/png/512/25/25395.png', class: "icon" %>
+                <%= f.hidden_field :watched, value: true %>
+                <%= f.submit "Seen It" %>
               <% end %>
             </div>
-            </div>
           <% end %>
+
           </div>
         </div>
       </div>
+
       <div class="right-column">
         <h2> Create an Event </h2>
         <%= form_for @event do |f| %>
