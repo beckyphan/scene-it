@@ -11,7 +11,7 @@
   <div class="movie-show-info">
     <h1> <%= thumbs_rating(@avg_rating) %>  <%= @movie.name %>  <%= thumbs_rating(@avg_rating) %></h1>
     <div>
-      <h3><%= @movie.year %> | <%= @movie.category %> | <%= link_to "Edit", edit_movie_path, class: "edit" %></h3>
+      <h3><%= @movie.year %> | <%= @movie.category %> | <%= link_to "Edit", edit_movie_path(@movie), class: "edit" %></h3>
       <br>
     </div>
 
