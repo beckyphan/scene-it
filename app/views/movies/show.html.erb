@@ -76,13 +76,13 @@
         <h2> Create an Event </h2>
         <%= form_for @event do |f| %>
           <%= f.label :title %>
-          <%= f.text_field :title %><br>
+          <%= f.text_field :title %><br><br>
 
           <%= f.label :datetime %>
-          <%= f.datetime_select :datetime %><br>
+          <%= f.datetime_select :datetime %><br><br>
 
           <%= f.label :location %>
-          <%= f.text_field :location %><br>
+          <%= f.text_field :location %><br><br>
 
           <%= f.hidden_field :movie_id, value: params[:id] %>
           <%= f.hidden_field :host_id, value: current_user.id %>

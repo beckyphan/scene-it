@@ -1,2 +1,10 @@
 <h1>|| Events ||</h1>
 <br>
+
+<% @events.each do |e| %>
+  <a href="/events/<%= e.id %>">
+    <span>
+      <h3><%= e.title %> at <%= e.location %> || <%= e.datetime.strftime("%A, %m/%d/%Y") %> | <%= e.datetime.strftime("%I:%M%p")   %></h3>
+    </span>
+  </a>
+<% end %>
