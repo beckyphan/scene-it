@@ -72,7 +72,22 @@
           </div>
         </div>
       </div>
-      <div class="right-column"
+      <div class="right-column">
+        <h2> Create an Event </h2>
+        <%= form_for @event do |f| %>
+          <%= f.label :title %>
+          <%= f.text_field :title %><br>
+
+          <%= f.label :datetime %>
+          <%= f.datetime_select :datetime %><br>
+
+          <%= f.label :location %>
+          <%= f.text_field :location %><br>
+
+          <%= f.hidden_field :movie_id, value: params[:id] %>
+          <%= f.hidden_field :host_id, value: current_user.id %>
+          <%= f.submit "Create Event" %>
+        <% end %>
       </div>
     </div>
   </div>

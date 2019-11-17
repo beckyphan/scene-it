@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find_by_id(params[:id])
+    @event = Event.new
 
     if @movie.ratings.size > 0
       @avg_rating = @movie.ratings.where(recommend: true).size - @movie.ratings.where(recommend: false).size

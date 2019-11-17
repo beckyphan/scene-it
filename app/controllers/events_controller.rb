@@ -4,6 +4,9 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def create
+  end 
+
   def show
     @event = Event.find_by_id(params[:id])
     @movie = Movie.find_by_id(@event.movie_id)
