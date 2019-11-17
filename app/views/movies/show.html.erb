@@ -28,17 +28,20 @@
           <% end %>
       <% end %>
     </div>
-
+    <br>
+      <div class="divider">
+      </div>
+    <br>
     <div class="form-dividers">
       <% if !@seen %>
       <div class="seen-button">
-      <h3> Have you Seen This Movie? </h3>
-      <%= form_for @list do |f| %>
-        <%= f.hidden_field :user_id, value: current_user.id %>
-        <%= f.hidden_field :movie_id, value: params[:id] %>
-        <%= f.hidden_field :watched, value: true %>
-        <%= f.submit "Seen It" %>
-      <% end %>
+        <h3> Have you Seen This Movie? </h3>
+        <%= form_for @list do |f| %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+          <%= f.hidden_field :movie_id, value: params[:id] %>
+          <%= f.hidden_field :watched, value: true %>
+          <%= f.submit "Seen It" %>
+        <% end %>
       </div>
       <% end %>
       <% if @seen %>
