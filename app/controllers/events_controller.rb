@@ -1,5 +1,9 @@
 class EventsController < ApplicationController
 
+  def index
+    @events = Event.all
+  end
+
   def show
     @event = Event.find_by_id(params[:id])
     @movie = Movie.find_by_id(@event.movie_id)
