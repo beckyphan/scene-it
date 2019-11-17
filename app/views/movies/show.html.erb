@@ -20,10 +20,9 @@
         <h2> Upcoming Viewing Events </h2>
           <% @movie.events.each do |e| %>
             <a href="/events/<%= e.id %>">
-              <span>
-                <%= e.title %><br>
-                <%= e.date %> | <%= e.time %><br>
-                <%= e.location %>
+              <span class="events-info">
+                <%= e.title %> at <%= e.location %><br>
+                <%= e.datetime.strftime("%A, %m/%d/%Y") %> | <%= e.datetime.strftime("%I:%M%p")   %><br>
               </span>
             </a>
           <% end %>

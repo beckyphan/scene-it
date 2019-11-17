@@ -45,6 +45,21 @@ button {
   color: black;
 }
 
+.events-info {
+  justify-content: center;
+  color: black;
+}
+
+span.events-info {
+  display:flex;
+  opacity: 0.7;
+}
+
+span.events-info:hover {
+  opacity: 1;
+  transition: opacity 500ms linear;
+}
+
 div.form-dividers {
   display: flex;
 }

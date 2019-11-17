@@ -24,8 +24,7 @@ ActiveRecord::Schema.define(version: 2019_11_11_004837) do
 
   create_table "events", force: :cascade do |t|
     t.text "title"
-    t.date "date"
-    t.time "time"
+    t.time "datetime"
     t.text "location"
     t.integer "host_id"
     t.integer "movie_id"
