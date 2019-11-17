@@ -5,7 +5,10 @@ class EventsController < ApplicationController
   end
 
   def create
-  end 
+    @event = Event.create(event_params)
+    @movie = Movie.find_by_id(@event.movie_id)
+    redirect_to movie_path(@movie)
+  end
 
   def show
     @event = Event.find_by_id(params[:id])
@@ -14,6 +17,12 @@ class EventsController < ApplicationController
     @attendees = @event.attendees
     @comments = Comment.where(event_id: params[:id])
 
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:title, :datetime, :location, :movie_id, :host_id)
   end
 
 end
