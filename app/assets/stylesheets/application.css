@@ -137,7 +137,17 @@ a:link, a:visited {
   color: white;
 }
 
+a.black-text {
+  color: black;
+}
+
 a:hover {
   opacity: 1;
   transition: opacity 500ms linear;
+}
+
+.two-column {
+  display: flex;
+  justify-content: space-around;
+  color: black;
 }

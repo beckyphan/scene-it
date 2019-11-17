@@ -1,0 +1,33 @@
+<style>
+  body {
+    background-image: url('<%= @movie.image_url %>');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<div class="movie-show-background">
+  <div class="movie-show-info">
+    <h2><%= @movie.name %></h2>
+    <h3><%= @event.datetime.strftime("%A, %m/%d/%Y")  %> | <%= @event.datetime.strftime("%I:%M%p")   %></h3>
+    <h3><%= @event.location %></h3>
+    <h3>Host: <%= link_to @host.username, user_path(@host), class: "black-text" %></h3>
+  </div>
+
+  <div class="two-column">
+    <div class="column">
+      <h3>Attendees</h3>
+
+      <span>
+        <!-- if attending, then show button for can't attendees
+        if not attending or nil, then show button for attend
+        attend should update patient's status in X controller? -->
+      </span>
+    </div>
+
+    <div class="column">
+      <h3>Comments</h3>
+        <!-- for each comment, display username and comment, with timestamp -->
+    </div>
+  </div>
+</div>
