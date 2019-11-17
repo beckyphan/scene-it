@@ -63,8 +63,11 @@ div.form-dividers {
 
 .highlight {
   opacity: 1;
-  background-color: #ccd9ff;
   border-radius: 10px;
+}
+
+.highlight .icon {
+  width: 50px;
 }
 
 .dim:hover, .highlight:hover {
