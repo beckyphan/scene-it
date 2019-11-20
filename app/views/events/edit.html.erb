@@ -1,0 +1,17 @@
+<style>
+  body {
+    background-image: url('<%= @movie.image_url %>');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<div class="movie-show-background">
+  <div class="movie-show-info">
+    <h2><%= @movie.name %>
+      <% if @host == current_user %> | <%= link_to "Edit Event", edit_event_path(@event), class: "edit" %></h2> <% end%> 
+    <h3><%= @event.datetime.strftime("%A, %m/%d/%Y")  %> | <%= @event.datetime.strftime("%I:%M%p")   %></h3>
+    <h3><%= @event.location %></h3>
+    <h3>Host: <%= link_to @host.username, user_path(@host), class: "black-text" %></h3>
+  </div>
+</div>

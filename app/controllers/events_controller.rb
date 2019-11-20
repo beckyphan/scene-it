@@ -19,6 +19,12 @@ class EventsController < ApplicationController
 
   end
 
+  def edit
+    @event = Event.find_by_id(params[:id])
+    @movie = Movie.find_by_id(@event.movie_id)
+    @host = User.find_by_id(@event.host_id)  
+  end
+
   private
 
   def event_params
