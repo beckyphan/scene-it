@@ -1,0 +1,31 @@
+<style>
+  body {
+    background-image: url('<%= @movie.image_url %>');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+
+<div class="movie-show-background">
+
+  <div class="movie-show-info">
+    <center>
+    <%= form_for @movie do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br>
+      <%= f.label :year %>
+      <%= f.text_field :year %>
+      <br>
+      <%= f.label :category %>
+      <%= f.text_field :category %>
+      <br>
+      <%= f.label :image_url %>
+      <%= f.text_field :image_url %>
+      <br><br>
+      <%= f.submit "Submit" %>
+    <% end %>
+    </center>
+  </div>
+
+</div>

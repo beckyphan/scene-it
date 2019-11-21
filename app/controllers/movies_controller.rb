@@ -53,6 +53,10 @@ class MoviesController < ApplicationController
 
   end
 
+  def edit 
+    @movie = Movie.find_by_id(params[:id])
+  end
+
   private
 
   def movie_params
