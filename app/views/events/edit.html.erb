@@ -10,7 +10,7 @@
   <div class="movie-show-info">
     <h2><%= @movie.name %>
       <% if @host == current_user %>
-       | <%= link_to "Delete Event", event_path(@event), class: "delete" %></h2> 
+       | <%= link_to "Delete Event", event_path(@event), method: "delete", class: "black-text" %></h2>
        <% end%>
     <h3><%= @event.datetime.strftime("%A, %m/%d/%Y")  %> | <%= @event.datetime.strftime("%I:%M%p")   %></h3>
     <h3><%= @event.location %></h3>
